@@ -1,0 +1,54 @@
+<div class="center">
+  <mat-card class="card">
+    <mat-card-header>
+      <mat-card-title>{{  funcionario ? "Editar" : "Cadastrar"  }} Funcionário</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form [formGroup]="form">
+        <mat-form-field>
+          <mat-label>Nome</mat-label>
+          <input
+            matInput
+            placeholder="Nome"
+            formControlName="nome"
+            autocomplete="off"
+          />
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Data de Nascimento</mat-label>
+          <input matInput [matDatepicker]="picker" formControlName="nascimento">
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Empresa</mat-label>
+          <mat-select [compareWith]="compare" formControlName="empresa">
+            <mat-option *ngFor="let empresa of empresas" [value]="empresa">
+              {{empresa.nome}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Cargo</mat-label>
+          <input
+            matInput
+            placeholder="Cargo"
+            formControlName="cargo"
+            autocomplete="off"
+          />
+        </mat-form-field>
+
+        <button
+          mat-raised-button
+          color="primary"
+          style="width: 100%"
+        >
+          SALVAR
+        </button>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

@@ -1,0 +1,30 @@
+<div style="height: 100%;">
+  <div class="container-tabela">
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+      <ng-container matColumnDef="nome">
+        <th mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let element">{{ element.nome }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cnpj">
+        <th mat-header-cell *matHeaderCellDef>CNPJ</th>
+        <td mat-cell *matCellDef="let element">{{ element.cnpj }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataAbertura">
+        <th mat-header-cell *matHeaderCellDef>Data de Abertura</th>
+        <td mat-cell *matCellDef="let element">{{ element.dataAbertura }}</td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns" (click)="editar(row)"></tr>
+    </table>
+  </div>
+
+  <div class="fab-container">
+    <button mat-fab [routerLink]="['/empresas/cadastrar']" >
+      <mat-icon> add </mat-icon>
+    </button>
+  </div>
+</div>
