@@ -10,6 +10,10 @@ import { MatInputModule } from '@angular/material/input';
 import { CadastrarEditarComponent } from './cadastrar-editar/cadastrar-editar.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { EmpresaResolver } from './empresa.resolver';
+import { StoreModule } from '@ngrx/store';
+import { empresaReducer } from './empresa.reducer';
+import { EffectsModule } from '@ngrx/effects';
+import { EmpresaEffects } from './empresa.effects';
 
 const routes: Routes = [
   {
@@ -23,6 +27,9 @@ const routes: Routes = [
   {
     path: ':id',
     component: CadastrarEditarComponent,
+    resolve: {
+      empresa: EmpresaResolver
+    }
   },
 ];
 
@@ -37,6 +44,8 @@ const routes: Routes = [
     MatCardModule,
     MatInputModule,
     ReactiveFormsModule,
+    StoreModule.forFeature('empresa', empresaReducer),
+    EffectsModule.forFeature([EmpresaEffects])
   ],
   providers: [EmpresaResolver],
 })

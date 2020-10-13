@@ -1,4 +1,53 @@
 {
-  "empresas": [],
-  "funcionarios": []
+  "empresas": [
+    {
+      "id": 7,
+      "cnpj": "CNPJ 3",
+      "nome": "Empresa 3",
+      "dataAbertura": "2020-09-01T04:00:00.000Z",
+      "representante": "Fulano 3"
+    },
+    {
+      "id": 5,
+      "cnpj": "CNPJ 5",
+      "nome": "Empresa 5",
+      "dataAbertura": "2020-09-01T04:00:00.000Z",
+      "representante": "Fulano 5"
+    },
+    {
+      "id": 9,
+      "cnpj": "CNPJ 9",
+      "nome": "Empresa 9",
+      "dataAbertura": "2020-09-01T04:00:00.000Z",
+      "representante": "Fulano 9"
+    }
+  ],
+  "funcionarios": [
+    {
+      "id": 1,
+      "nome": "Funcionario 1",
+      "nascimento": "2020-09-01T04:00:00.000Z",
+      "cargo": "Desenvolvedor",
+      "empresa": {
+        "id": 7,
+        "cnpj": "CNPJ 3",
+        "nome": "Empresa 3",
+        "dataAbertura": "2020-09-01T04:00:00.000Z",
+        "representante": "Fulano 3"
+      }
+    },
+    {
+      "id": 2,
+      "nome": "Funcionario 2",
+      "nascimento": "2020-09-01T04:00:00.000Z",
+      "cargo": "Desenvolvedor",
+      "empresa": {
+        "id": 9,
+        "cnpj": "CNPJ 9",
+        "nome": "Empresa 9",
+        "dataAbertura": "2020-09-01T04:00:00.000Z",
+        "representante": "Fulano 9"
+      }
+    }
+  ]
 }

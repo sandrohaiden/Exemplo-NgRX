@@ -1,6 +1,6 @@
 <div style="height: 100%;">
   <div class="container-tabela">
-    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    <table mat-table [dataSource]="dataSource$ | async" class="mat-elevation-z8">
 
       <ng-container matColumnDef="nome">
         <th mat-header-cell *matHeaderCellDef>Nome</th>
